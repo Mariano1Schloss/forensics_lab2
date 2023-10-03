@@ -11,7 +11,7 @@ This is a simple command-line tool that provides information about an ELF file. 
 - `-s`: Display sections header table information.
 
 ## repo_parcours Introduction
-The purpose of this section is to traverse a directory. For each found file, the following information should be displayed:
+The purpose of this program is to traverse a directory. For each found file, the following information should be displayed:
 
 - Inode number
 - Type (Regular: DT_REG or Directory: DT_DIR)
