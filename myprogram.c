@@ -41,9 +41,6 @@ void *fileHeader(FILE *filePointer)
 */
 void *programHeader(FILE *filePointer)
 {
-	// récupérer le offset de la table
-	// placer le pointeur aubon endroit
-	// read number of entries * size of entry
 	Elf64_Ehdr elfHeader;
 	if (fread(&elfHeader, 1, sizeof(Elf64_Ehdr), filePointer) != sizeof(Elf64_Ehdr))
 	{
@@ -72,15 +69,15 @@ void *programHeader(FILE *filePointer)
 		// Check if this segment should be loaded
 		if (phdr->p_type == PT_LOAD)
 		{
-			printf("Segment %d:\n", i);
+			printf("\nSegment %d:\n", i);
 			printf("  Type: %u\n", phdr->p_type);
 			printf("  Flags: %u\n", phdr->p_flags);
-			printf("  File Offset: %lu\n", phdr->p_offset);
+			printf("  File Offset: 0x%lx\n", phdr->p_offset);
 			printf("  Virtual Address: 0x%lx\n", phdr->p_vaddr);
 			printf("  Physical Address: 0x%lx\n", phdr->p_paddr);
-			printf("  File Size: %lu bytes\n", phdr->p_filesz);
-			printf("  Memory Size: %lu bytes\n", phdr->p_memsz);
-			printf("  Alignment: %lu\n", phdr->p_align);
+			printf("  File Size: 0x%lx bytes\n", phdr->p_filesz);
+			printf("  Memory Size: 0x%lx bytes\n", phdr->p_memsz);
+			printf("  Alignment: 0x%lx\n", phdr->p_align);
 		}
 	}
 	free(phHeaders);
