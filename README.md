@@ -2,7 +2,7 @@
 
 ##  Myprogram Introduction
 
-This is a simple command-line tool that provides information about an ELF file. It is designed to display header information for files, program header tables, and sections header tables.
+This is a simple command-line tool that provides information about an ELF file. It is designed to display  information about file header, program header tables, and sections header tables.
 
 ## Myprogram Usage
 
